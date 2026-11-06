@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Session Usage</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+      }
+
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        background: transparent;
+      }
+
+      body {
+        color: #1f1f1f;
+        font-family: var(--oc-font, system-ui, -apple-system, "Segoe UI", sans-serif);
+        font-size: 13px;
+        line-height: 1.35;
+      }
+
+      body[data-theme="dark"] {
+        color: #f2f2f2;
+      }
+
+      #root {
+        height: 100%;
+        box-sizing: border-box;
+        padding: 12px;
+        overflow: auto;
+      }
+
+      body[data-surface="status"] #root {
+        padding: 8px 10px;
+        overflow: hidden;
+      }
+
+      .muted {
+        color: #6f6f6f;
+      }
+
+      body[data-theme="dark"] .muted {
+        color: #a3a3a3;
+      }
+
+      .mono {
+        font-family: var(--oc-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+        font-variant-numeric: tabular-nums;
+      }
+
+      .panel {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .card {
+        border: 1px solid var(--oc-border, rgba(128, 128, 128, 0.25));
+        border-radius: calc(var(--oc-radius, 8px) + 2px);
+        background: var(--oc-elevated, rgba(128, 128, 128, 0.08));
+        padding: 12px;
+      }
+
+      .card-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 8px;
+      }
+
+      .card-title {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+      }
+
+      .card-total {
+        font-size: 26px;
+        font-weight: 650;
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+      }
+
+      .card-total-unit {
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--oc-muted, #8a8a8a);
+        margin-left: 4px;
+      }
+
+      .card-sub {
+        margin-top: 2px;
+        font-size: 11px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 6px;
+      }
+
+      .cell {
+        border-radius: var(--oc-radius, 8px);
+        background: var(--oc-muted-surface, rgba(128, 128, 128, 0.1));
+        padding: 7px 8px;
+        min-width: 0;
+      }
+
+      .cell-label {
+        font-size: 10px;
+        color: var(--oc-muted, #8a8a8a);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .cell-value {
+        margin-top: 2px;
+        font-size: 13px;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+
+      .cell-value.accent {
+        color: var(--oc-primary-text, var(--oc-primary, #6ea8fe));
+      }
+
+      .children {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 8px;
+        font-size: 11px;
+        padding: 0 2px;
+      }
+
+      .status {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .status-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 8px;
+      }
+
+      .status-label {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        color: var(--oc-muted, #8a8a8a);
+      }
+
+      .status-total {
+        font-size: 20px;
+        font-weight: 650;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+
+      .status-total-unit {
+        font-size: 10px;
+        font-weight: 500;
+        color: var(--oc-muted, #8a8a8a);
+        margin-left: 3px;
+      }
+
+      .status-line {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px 10px;
+        font-size: 11px;
+        color: var(--oc-muted, #8a8a8a);
+      }
+
+      .status-line b {
+        color: #1f1f1f;
+        font-weight: 600;
+      }
+
+      body[data-theme="dark"] .status-line b {
+        color: #f2f2f2;
+      }
+
+      .state {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        justify-content: center;
+        height: 100%;
+        font-size: 12px;
+      }
+
+      .state-title {
+        font-weight: 600;
+      }
+
+      .state-body {
+        font-size: 11px;
+        color: var(--oc-muted, #8a8a8a);
+      }
+
+      .state-error {
+        color: var(--oc-error-text, var(--oc-error, #e5484d));
+      }
+    </style>
+  </head>
+  <body data-surface="panel">
+    <div id="root">
+      <div class="state">
+        <div class="state-title">连接中…</div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

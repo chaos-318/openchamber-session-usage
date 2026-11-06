@@ -1,0 +1,33 @@
+{
+  "name": "openchamber-session-usage",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Show the current session's cumulative token usage in OpenChamber.",
+  "openchamber": {
+    "apiVersion": 1,
+    "engines": {
+      "openchamber": ">=2.5.0"
+    },
+    "id": "session-usage",
+    "name": "Session Usage",
+    "icon": "bar-chart-2",
+    "contributes": {
+      "panel": {
+        "id": "session-usage",
+        "name": "Session Usage",
+        "icon": "bar-chart-2",
+        "entry": "panel/index.html"
+      },
+      "statusSection": {
+        "entry": "panel/index.html",
+        "title": "会话 Token",
+        "height": 132
+      },
+      "service": {
+        "entry": "service/main.js",
+        "runtime": "host"
+      }
+    }
+  }
+}
