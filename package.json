@@ -3,7 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Show the current session's cumulative token usage in OpenChamber.",
+  "description": "OpenChamber extension: show the current session's cumulative token usage.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chaos-318/openchamber-session-usage.git"
+  },
+  "homepage": "https://github.com/chaos-318/openchamber-session-usage#readme",
   "openchamber": {
     "apiVersion": 1,
     "engines": {
